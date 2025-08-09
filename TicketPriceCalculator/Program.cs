@@ -5,9 +5,9 @@ class TicketPriceCalculator
     static void Main()
     {
         Console.Write("Enter your age: ");
-        string input = Console.ReadLine();
+        string? input = Console.ReadLine();
 
-        if (!int.TryParse(input, out int age) || age < 0)
+        if (input == null || !int.TryParse(input, out int age) || age < 0)
         {
             Console.WriteLine("Invalid age. Please enter a non-negative integer.");
             return;
@@ -21,5 +21,3 @@ class TicketPriceCalculator
         Console.WriteLine($"Age: {age}. Ticket price: GHC{ticketPrice}");
     }
 }
-
-
